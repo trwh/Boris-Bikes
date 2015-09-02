@@ -1,0 +1,5 @@
+Type of error: NameError
+File path: /Users/Sophie/.rvm/rubies/ruby-2.1.5/bin/irb:11:in
+Line number: 1
+NameError: Raised when a given name is invalid or undefined
+Solution: Define class / constant DockingStation
