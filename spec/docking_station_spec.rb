@@ -35,6 +35,20 @@ describe DockingStation do
       expect { subject.release_bike }.to raise_error "No bikes available"
     end
 
+    it "returns only working bikes" do
+      working_bike = Bike.new
+
+      broken_bike = Bike.new
+      broken_bike.report_broken
+
+      # Make a "working bike sandwich", to catch if a bike is just being taken from the start or end of the array.
+      subject.dock(broken_bike)
+      subject.dock(working_bike)
+      subject.dock(broken_bike)
+
+      expect(subject.release_bike).to be_working
+    end
+
   end
 
   describe "#dock" do
