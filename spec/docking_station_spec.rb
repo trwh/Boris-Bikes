@@ -2,6 +2,9 @@ require 'docking_station'
 require 'spec_helper'
 
 describe DockingStation do
+  it "can be initialized with one or no arguments" do
+    expect(DockingStation).to respond_to(:new).with(1).argument
+  end
 	it { expect(subject).to respond_to :release_bike }
 	it "releases working bikes" do
     subject.dock Bike.new
